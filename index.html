@@ -1,8 +1,26 @@
 <!DOCTYPE html>
 <html>
+
+<style>
+ .homeline{ 
+    position:absolute; top:23px; left:149px;display: block; background-color:dimgrey; color: red; border: solid 1px dimgrey; height: 3px; width:47px ;
+}
+
+.formline{
+    visibility:hidden;position:absolute; top:23px; left:207px;display: block; background-color:dimgrey; color: red; border: solid 1px dimgrey; height: 3px; width:42px ;
+}
+.aboutline{
+    visibility:hidden;position:absolute; top:23px; left:260px;display: block; background-color:dimgrey; color: red; border: solid 1px dimgrey; height: 3px; width:70px ;
+}
+</style>
+
+
+
 	
 	
 	<head>
+<!--  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 		<meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +30,7 @@
     	<title>Home - DWD Project</title>
 
 		<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
 
 		<link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -24,25 +43,32 @@
         	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     	<![endif]-->
 	</head>
-	<body>
 
+	<body>
+  
 	<!-- Nav Bar -->
-	<nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
+	<nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded" class="cl-effect-4" id="cl-effect-4">
   		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
     		<span class="navbar-toggler-icon"></span>
  		</button>
   		<a class="navbar-brand" href="#">YeeHawCorp</a>
 
-  		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  		<div class="collapse navbar-collapse"  id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto mt-md-0">
 		    	<li class="nav-item active">
-		        	<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		        	<a class="nav-link" href="#" id="home">Home <span class="sr-only">(current)</span></a>
+                  <hr class="homeline">
+
+		      	</li>
+		      	<li class="nav-item form" class="form" >
+		        	<a class="nav-link" href="#" id="form">Form</a>
+                    <hr class="formline">
+                   
 		      	</li>
 		      	<li class="nav-item">
-		        	<a class="nav-link" href="#">Form</a>
-		      	</li>
-		      	<li class="nav-item">
-		        	<a class="nav-link" href="#">About Us</a>
+		        	<a class="nav-link" href="#" id="aboutus">About Us</a>
+                    <hr class="aboutline">
+                   
 		      	</li>
 		    </ul>
 		    <form class="form-inline my-2 my-lg-0">
@@ -71,9 +97,38 @@
     	</div>
 	</div>
 
+   
+
 	<!-- Form -->
 
 	<!-- About Us -->
 
 	</body>
+    <script>
+
+ $(document).ready(function(){
+    //For form line
+    $("#form").mouseenter(function(){
+        $(".formline").css("visibility" , "visible");
+    });
+
+$("#form").mouseleave(function(){
+        $(".formline").css("visibility" , "hidden");
+    });
+
+    //For aboutus line
+    $("#aboutus").mouseenter(function(){
+        $(".aboutline").css("visibility" , "visible");
+    });
+
+$("#aboutus").mouseleave(function(){
+        $(".aboutline").css("visibility" , "hidden");
+    });
+
+});
+   
+    </script>
+
+
+
 </html>
